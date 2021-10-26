@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="ForObject_C" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="DB" type="WindowsFormsApp4.Cust_DTO" />
+	</alias>
+	<resultMaps>
+		<resultMap id="CustResult" class="DB">
+			<result property="Name" column="Name" />
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<select id="SelectCust" resultClass="string" resultMap="CustResult">
+			SELECT Name
+			FROM comst_db
+		</select>
+		
+	</statements>
+</sqlMap>
+

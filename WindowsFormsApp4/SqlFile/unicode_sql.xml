@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="ForList_U" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<alias>
+		<typeAlias alias="UnicodeDTO" type="WindowsFormsApp4.Unicode_Table_DTO" />
+	</alias>
+	<resultMaps>
+		<resultMap id="DBResult" class="UnicodeDTO">
+			<result property="Number" column="Number" />
+			<result property="Korean" column="Korean" />
+			<result property="Unicode" column="Unicode" />
+			<result property="Roman" column="Roman" />
+			<result property="Roman_ex" column="Roman_ex" />
+			<result property="Last_name" column="Last_name" />
+		</resultMap>
+	</resultMaps>
+	<statements>
+		<!--<selelct id ="SelectTest1" resultClass ="string">
+			SELECT Roman
+			FROM Unicode_Table
+			WHERE	Korean = #value#
+		</selelct>
+		<select id="SelectRoman" resultMap="DBResult">
+			SELECT Roman
+			FROM Unicode_Table
+			WHERE	Korean = #value#
+		</select>-->
+		<select id="SelectAllRoman"  resultMap="DBResult">
+			SELECT Roman
+			FROM Unicode_Table
+		</select>
+		<select id="SelectKorean"  resultMap="DBResult">
+			SELECT Korean
+			FROM Unicode_Table
+		</select>
+		<select id="SelectAll" resultMap="DBResult">
+			SELECT *
+			FROM Unicode_Table
+		</select>
+	</statements>
+</sqlMap>
+
